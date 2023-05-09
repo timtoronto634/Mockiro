@@ -1,22 +1,22 @@
-.mind-map-box {
+.editable-box {
   border: 1px solid #ccc;
   border-radius: 5px;
+  /* fill the background with a gradient */
+  background-color: #ccc;
   padding: 5px;
   font-size: 16px;
   font-family: Arial, sans-serif;
   width: 200px;
+  text-align: center;
   display: inline-block;
 }
 
-.mind-map-box input[type='text'] {
+.editable-box input[type='text'] {
   width: 100%;
   padding: 5px;
   font-size: 16px;
   font-family: Arial, sans-serif;
   border: none;
   outline: none;
-}
-
-.mind-map-box .text {
-  cursor: pointer;
+  text-align: center;
 }

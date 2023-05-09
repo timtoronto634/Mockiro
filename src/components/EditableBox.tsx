@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import '../css/MindMapBox.css';
+import '../css/EditableBox.css';
 
-export const MindMapBox = (): JSX.Element => {
+export const EditableBox = (): JSX.Element => {
   const [editing, setEditing] = useState(false);
   const [newText, setNewText] = useState('test');
 
@@ -20,7 +20,7 @@ export const MindMapBox = (): JSX.Element => {
   };
 
   return (
-    <div className="mind-map-box">
+    <div className="editable-box">
       {editing ? (
         <input
           type="text"
