@@ -1,11 +1,13 @@
 import React from 'react';
-import { EditableBox } from './components/EditableBox';
+import { MindMapBox } from './components/MindMapBox';
+import { MindMapManager } from './components/MindMapManger';
 
 export const App = () => {
   return (
     <div className="App">
       <h1>Mind Map</h1>
-      <EditableBox />
+      {/* <MindMapBox /> */}
+      <MindMapManager />
     </div>
   );
 };
