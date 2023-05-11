@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import '../css/EditableBox.css';
 
-export const EditableBox = (text: string): JSX.Element => {
+export const EditableBox = (): JSX.Element => {
   const [editing, setEditing] = useState(false);
-  const [newText, setNewText] = useState(text);
+  const [newText, setNewText] = useState("text");
 
   const handleDoubleClick = () => {
     setEditing(true);

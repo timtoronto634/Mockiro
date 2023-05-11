@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { TextBox } from './TextBox';
 // import { EditableBox } from './EditableBox';
-// import { MindMapBox } from './MindMapBox';
+// import { MindMapNode } from './MindMapNode';
 
 export const MindMapManager = () => {
   // const [nodes, setNodes] = useState<JSX.Element[]>([]);
