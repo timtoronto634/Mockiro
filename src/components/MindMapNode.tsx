@@ -3,12 +3,16 @@ import { EditableBox } from './EditableBox';
 import { AddBoxButton } from './AddBoxButton';
 import '../css/MindMapNode.css'
 
-export const MindMapNode = (onAddButton: ()=>void) => {
-  const addButton = AddBoxButton(onAddButton);
+interface MindMapNodeProps {
+  onAddButton: () => void;
+}
+
+export const MindMapNode: ((a: MindMapNodeProps) => JSX.Element) = (props) => {
+  const addButton = AddBoxButton(props.onAddButton);
   return (
     <div className="mind-map-node">
       <EditableBox />
-      addButton
+      {addButton}
     </div>
   );
-}
+};
