@@ -4,15 +4,19 @@ import { AddBoxButton } from './AddBoxButton';
 import '../css/MindMapNode.css'
 
 interface MindMapNodeProps {
-  onAddButton: () => void;
+  // onAddButton: () => void;
+  level: number;
+  addChild: (a: number) => () => void;
+  // setCols;
 }
 
-export const MindMapNode: ((a: MindMapNodeProps) => JSX.Element) = (props) => {
-  const addButton = AddBoxButton(props.onAddButton);
+export const MindMapNode: ((a: MindMapNodeProps) => JSX.Element) = ({level, addChild}) => {
+  const handleClick = addChild(level);
+  
   return (
     <div className="mind-map-node">
       <EditableBox />
-      {addButton}
+      <AddBoxButton onAddButton={handleClick} />
     </div>
   );
 };

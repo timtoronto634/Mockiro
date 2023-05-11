@@ -1,27 +1,33 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { TextBox } from './TextBox';
 import { MindMapNode } from './MindMapNode';
 // import { EditableBox } from './EditableBox';
 
 export const MindMapManager = () => {
-  const doNothing = () => {};
-  const [ll, setLl] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-  const tmpButton = () => {
-    const newll = [...ll, 10];
-    console.log(ll);
-    setLl(newll);
+  const [cols, setCols] = useState<JSX.Element[][]>([[]]);
+  const addChild: (a: number) => () => void = (currentIdx: number) => {
+    return () => {
+      const nextIdx = currentIdx + 1;
+      const newCols = nextIdx >= cols.length ? [...cols, []] : [...cols];
+      newCols[nextIdx].push(<MindMapNode level={nextIdx}  addChild={addChild} />);
+      setCols(newCols);
+    }
   };
-  const tBox = TextBox('test');
+  const rootNode = <MindMapNode level={0}  addChild={addChild} />;
+  useEffect(() => {
+    setCols([[rootNode]]);
+  }, []);
+
 
   return (
     <div className="Nodes">
       Mindmap
       {
-        ll.map((val, idx) => {
+        cols.map((val, idx) => {
           return (
             <div key={idx+"ll"}>
-              <MindMapNode onAddButton={doNothing} />
+              {val}
             </div>
           );
         })
