@@ -1,11 +1,11 @@
 import React from 'react';
-import { MindmapNode } from './central/components/MindmapNode';
+import { MindmapManager } from './central/components/MindmapManager';
 
 export const App = () => {
   return (
     <div className="App">
       <h1>Mind Map</h1>
-      <MindmapNode level={0} />
+      <MindmapManager />
     </div>
   );
 };
